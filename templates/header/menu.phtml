@@ -2,14 +2,25 @@
 /* @var $this Block_Menu */
 $current = $this->getCurrentUrl();
 ?>
-<div class="menu">
+<div class="menu" id="menu">
     <span class="tel" data-title="+38-(097)-851-97-94 +38-(097)-486-53-45">
         <a href="#"><i class="phone fas fa-phone"></i></a>
     </span>
     <ul>
-        <li><a href="#"><i class="fas fa-home"></i></a></li>
-        <li><a href="#">Про нас</a></li>
-        <li><a href="#">Работы</a></li>
-        <li><a href="#">Контакты</a></li>
+        <li><a href="#oncl"><i class="fas fa-home"></i></a></li>
+        <li><a href="#about">Про нас</a></li>
+        <li><a href="#works">Работы</a></li>
+        <li><a href="#contact">Контакты</a></li>
     </ul>
 </div>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+    $("#menu").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 500);
+    });
+});
+</script>

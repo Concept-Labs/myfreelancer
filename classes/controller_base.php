@@ -40,11 +40,6 @@ Abstract Class Controller_Base
         	$headerTemplate->set('headerMenu', $_htmlHeaderMenu);
         $_htmlheader = $headerTemplate->toHtml();
         $parentTemplate->set('header', $_htmlheader);
-                
-        $menuTemplate = clone $parentTemplate;
-        $menuTemplate->setFile('templates/menu.phtml');
-        $_html = $menuTemplate->toHtml();
-        $parentTemplate->set('menu', $_html);
         
         if($usePhp){
             $html = $template->toHtmlWithPhp();

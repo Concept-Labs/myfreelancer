@@ -12,7 +12,7 @@ Class Controller_Index Extends Controller_Base
     public function index() 
     {
      	
-		$template = $this->_initTemplate('MyLocalCom');
+		$template = $this->_initTemplate('MY FREELANCER');
         
         $template->set("data", "Hello", false);
         $template->set("name", "Vitalik", false);

@@ -1,18 +1,17 @@
 <html doctype="html">
-    <head>
-        <title>{{$title}}</title>
-        <meta name="title" content="{{$title}}" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta description="услуги вашой фирмы компании" keywords="ключевые слова">
-        {{$headfiles}}
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    </head>
-    <body>
-        {{$header}}
-        {{$menu}}
-        <!-- контент сюда попадает из файла , которий засетан в текущем контролере - например $template->setFile('templates/main.phtml') -->
-       {{$content}}
-		
-        {{$footer}}
-    </body>
+<head>
+    <title>{{$title}}</title>
+    <meta name="title" content="{{$title}}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta description="услуги вашой фирмы компании" keywords="ключевые слова">
+    {{$headfiles}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
+</head>
+<body>
+    {{$header}}
+    {{$content}}
+    {{$footer}}
+</body>
 </html>
