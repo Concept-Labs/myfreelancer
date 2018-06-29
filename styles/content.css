@@ -1,9 +1,9 @@
 .name{
-	background: url(../img/apple-computer-desk-159643.jpg) no-repeat;
+	background: url(../img/apple-computer-desk-159643.jpg) no-repeat#2e2e2e;
 	background-attachment: fixed;
     background-size: cover;
     background-position: 50% 50%;
-    padding: 231px 0;
+    /* padding: 80px 0; */
     z-index: 0;
 	margin-top: 50px;
 	text-align: center;
@@ -18,7 +18,9 @@
     opacity: 1;
 
 }
-
+.none{
+	padding-top: 180px;
+}
 .name h1{
 	padding: 10px 0;
     -webkit-user-select: none; /* Це для того, щоб користувачі не могли копіювати текст */
@@ -36,6 +38,7 @@ p.slogan{
 	font-size: 100%;
 }
 .about{
+	padding-top: 40px;
 	background: #E6E6E6;
 	width: 100%;
 	height: auto;
@@ -65,12 +68,16 @@ p.slogan{
 	color:#F2F2F2;
 	background: #A4A4A4;
 	width: 100%;
-	padding-bottom: 100px;
+	padding-top: 40px;
+	padding-bottom: 115px;
 }
 
 
 .works h1{
 	color:#F2F2F2;	
+}
+.works article{
+	float: left;
 }
 .sayings{
 	width: 100%;

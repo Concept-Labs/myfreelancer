@@ -16,8 +16,16 @@
 	width: 300px;
 }
 .logo img{
+	-moz-transition: all .5s ease-out;
+ -o-transition: all .5s ease-out;
+ -webkit-transition: all .5s ease-out;
 	height: 50px;
 	width: 300px;
+}
+.logo img:hover{
+	-webkit-transform: scale(1.05);
+ -moz-transform: scale(1.05);
+ -o-transform: scale(1.05);
 }
 .menu{
 	float: right;
@@ -44,7 +52,7 @@
 	line-height: 1;
 	transition: all .5s;
 }
-.menu ul li a:hover{
+.menu ul li a:hover, .menu ul li a:focus{
 	color: #00BFFF;
 }
 .menu ul li a:after {

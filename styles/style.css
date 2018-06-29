@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+html, body{
+height: 100%;
+}
 div{
 	display: block;
 }
@@ -49,7 +52,8 @@ span.tel:hover i.phone{
 
 .tel:before,
 .tel:after{
-	left: 92.5%;
+	margin: auto;
+
 	display: block;
 	position: absolute;
 	visibility: hidden;
@@ -96,6 +100,9 @@ span.tel:hover i.phone{
 	text-align: center;
 }
 .circle{
+	-moz-transition: all .5s ease-out;
+ -o-transition: all .5s ease-out;
+ -webkit-transition: all .5s ease-out;
 	margin-left: 32.333335%;
 	width:100px;
 	height:100px;
@@ -110,6 +117,14 @@ span.tel:hover i.phone{
 	text-align:center;
 	border: 2px solid  #2E2E2E;
 
+}
+.circle:hover{
+		-webkit-transform: scale(1.2);
+ -moz-transform: scale(1.2);
+ -o-transform: scale(1.2);
+}
+.pa-g{
+	padding-top: 29%;
 }
 .circle-opis{
 	font: normal 110% 'century gothic', arial;
@@ -126,12 +141,26 @@ span.tel:hover i.phone{
 	display: inline-block;
 	width: 300px;
 }
+.image {
+ overflow:hidden;
+ }
 .up-works-block img{
+	-moz-transition: all 1s ease-out;
+ -o-transition: all 1s ease-out;
+ -webkit-transition: all 1s ease-out;
 	max-width: 100%;
 	display: block;
 	border-radius: 5px;
 }
+.descr:hover .image img{
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+ }
+
 .descr{
+	border: 1px solid silver;
+	border-spacing: 2%;
 	border-radius: 5px;
 	font: normal 100% 'century gothic', arial;
 	color: #F2F2F2;
@@ -165,7 +194,7 @@ span.tel:hover i.phone{
 
 .contact input{
 	color: #fff;
-	width: 45.5%;
+	width: 47.1%;
 	padding: 1.5%;
 	border: 0px;
 	border-radius: 5px;
@@ -197,7 +226,7 @@ span.tel:hover i.phone{
 	opacity: 1;
 	  outline: none;
 }
-.contact a{
+.contact a, .contact ul{
 	font: normal 100% 'century gothic', arial;
 	transition: .4s all;
 	color: #A4A4A4;
@@ -205,7 +234,12 @@ span.tel:hover i.phone{
 .contact a i {
     margin-right: 10px;
 }
-.contact a:hover{
+.contact ul{
+	width: 120px;
+	list-style-type: none;
+	cursor: pointer;
+}
+.contact a:hover, .contact ul:hover{
 	color: #0080FF;
 }
 
@@ -233,3 +267,29 @@ i.fab:hover{
 .fa-skype{
 	background: #00aff0;
 }
+
+
+
+ul.save-right{
+
+	cursor: pointer;
+}
+li.hover-save{
+	position: relative;
+}
+ul.subsave{
+		transition: .2s all;
+	    background: #1C1C1C;
+	margin-left: 40px;
+	width:150px;  
+	height: 50px;
+	position: absolute;  
+	z-index: 200;
+	visibility: hidden;
+opacity: 0;
+}
+ul.save-right:hover ul.subsave{
+opacity: 1;
+visibility: visible;
+}
+
