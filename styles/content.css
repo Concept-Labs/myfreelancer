@@ -105,7 +105,7 @@ p.slogan{
 }
 .argument{
 	width: 100%;
-	background: url(../img/myfreelancer.jpg) no-repeat;
+	background: url(../img/myfreelancer2.jpg) no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: ;
@@ -179,4 +179,37 @@ p.slogan{
 .footer p{
 	font-size: 100%;
 	padding-top: 25px;
+}
+
+.svg-wrapper {
+	float: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+	  margin: 0 auto;
+  width: auto;  
+  text-align: center;
+}
+.shape {
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -424;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #19f6e8;
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text {
+  font: normal 100% 'century gothic', arial;	
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -48px;
+  position: relative;
+}
+.svg-wrapper:hover .shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
 }
