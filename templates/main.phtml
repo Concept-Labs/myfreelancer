@@ -1,12 +1,27 @@
+<?php
+if (isset($_SESSION['lang'])) {
+    if ($_SESSION['lang'] == 'ru') {
+        require_once('language/ru/templates/main.phtml');
+    }
+    if ($_SESSION['lang'] == 'en') {
+        require_once('language/en/templates/main.phtml');
+    }
+    if ($_SESSION['lang'] == 'ua') {
+        require_once('language/ua/templates/main.phtml');
+    }
+} else {
+    require_once('language/ru/templates/main.phtml');
+}
+?>
 <div id="oncl" class="name">
 	<section id="ex1">
 	<div class="none">
 		<div class="content">
 			<article class="post">
 			<div class="name_con">
-				<p class="slogan">МОЛОДАЯ КОМАНДА</p>
+				<p class="slogan"><?php echo $slogan; ?></p>
 				<h1>MY FREELANCER</h1>
-				<p>Быстро выполнит ваши потребности!</p>
+				<p><?php echo $pod_slogan; ?></p>
 
 			</div>	
 			</article>
@@ -19,29 +34,29 @@
 	<div class="content">	
 		
 		<div class="about-us">
-			<h1><img src="img/user.png" alt=""></h1>
-			<h1>Про нас</h1>
+			<h1><img src="img/user.png" alt="<?php echo $about; ?>"></h1>
+			<h1><?php echo $about; ?></h1>
 			<article class="post">
 			<div class="circle-block">
 				<div class="circle"><i class="pa-g fas fa-thumbs-up"></i></div>
 
-				<p class="animated pulse infinite">КАЧЕСТВЕННО</p>
+				<p class="animated pulse infinite"><?php echo $qualitatively; ?></p>
 			</div>
 			</article>	
 			<div class="circle-block">
 				<div class="circle"><i class="pa-g far fa-clock"></i></div>
 
-				<p class="animated pulse infinite">БЫСТРО</p>
+				<p class="animated pulse infinite"><?php echo $fast; ?></p>
 			</div>	
 			<article class="post last">
 			<div class="circle-block">
 				<div class="circle"><i class="pa-g fas fa-money-bill-alt"></i></div>
 
-				<p class="animated pulse infinite">ДЕШЕВО</p>
+				<p class="animated pulse infinite"><?php echo $cheap; ?></p>
 			</div>
 			</article>
 				<div class="about-bottom">
-				<p >Mы перспективная молодая команда, которая сделает Вам сайт наиболее удобным и современным, за короткое время и минимальную сумму.</p>
+				<p ><?php echo $about_bottom; ?></p>
 			</div>
 			</article>
 
@@ -55,17 +70,17 @@
 	<section id="ex3">
 	<div class="content">
 		<div class="works-con">
-			<h1>Наши работы</h1>
-			<p class="opis-works">Здесь вы можете увидеть перечень наших работ.</p>
+			<h1><?php echo $our_works; ?></h1>
+			<p class="opis-works"><?php echo $description_work; ?></p>
 			<div class="up-works-block">
 				<ul>
 				
-					<li> <div class="image"><img src="img/4.png" alt="Alt">	</div><a href="http://agrobaza.net.ua/" target="_blank"><span class="descr"><h2>АгроБаза</h2> <br/><p>Интернет-магазин</p></span></a></li>
+					<li> <div class="image"><img src="img/4.png" alt="<?php echo $name_site1; ?>">	</div><a href="http://agrobaza.net.ua/" target="_blank"><span class="descr"><h2><?php echo $name_site1; ?></h2> <br/><p><?php echo $site1; ?></p></span></a></li>
 			
-					<li> <div class="image">	</div><a href="http://methodist.pp.ua/" target="_blank"><span class="descr"><h2>Мій Методист</h2> <br/><p>Информационный сайт</p></span></a><img src="img/2.png" alt="Alt"></li>
+					<li> <div class="image">	</div><a href="http://methodist.pp.ua/" target="_blank"><span class="descr"><h2><?php echo $name_site2; ?></h2> <br/><p><?php echo $site2;?></p></span></a><img src="img/2.png" alt="Alt"></li>
 	
 					
-					<li> <div class="image">	</div><a href="#" target="_blank"><span class="descr"><h2>AGROBAZA</h2> <br/><p>Интернет-магазин</p></span></a><img src="img/3.png" alt="Alt"></li>
+					<li> <div class="image">	</div><a href="#" target="_blank"><span class="descr"><h2><?php echo $name_site3;?></h2> <br/><p><?php echo $site3;?></p></span></a><img src="img/3.png" alt="Alt"></li>
 						
 				</ul>
 			</div>
@@ -82,24 +97,24 @@
 	<div class="content">
 		<div class="contact-form">
 			<div class="contact-left">
-				<h1>Контактная форма</h1>
-				<p>Здесь вы можете задать интересующий вас вопрос, или же связаться с нами для заказа работы.</p>
-				<form action="/index" method="post">
-					<input type="text" name="name" placeholder=" ваше имя">
-					<input type="email" name="email" placeholder=" ваш email"> <br/><br/>
-					<textarea name="coment" id="" cols="30" rows="10" placeholder=" ваш коментарий"></textarea>
+				<h1><?php echo $conctakt_form;?></h1>
+				<p><?php echo $conctakt_description;?></p>
+				<form action="/index" enctype="multipart/form-data" method="post">
+					<input type="text" name="name" placeholder="<?php echo $conctakt_name;?>">
+					<input type="email" name="email" placeholder="<?php echo $conctakt_email;?>"> <br/><br/>
+					<textarea name="coment" id="" cols="30" rows="10" placeholder="<?php echo $conctakt_comment;?>"></textarea>
 					<br/><br/>
-					<input type="submit" name="send" value="Отправить">
+					<input type="submit" name="send" value="<?php echo $conctakt_send;?>">
 				</form>
 
 			</div>
 			<div class="contact-right">
 				<div class="con-right">
-					<h1>Наш адрес</h1>
-					<p>г. Киев <br/> тел: +38-(097)-851-97-94</p>
+					<h1><?php echo $our_address;?></h1>
+					<p><?php echo $city1;?><br/> <?php echo $phone;?>: +38-(097)-851-97-94</p>
 					<br/>
-					<p>г. Ровно <br/> тел: +38-(097)-486-53-45</p>
-					<h1>Связаться с нами</h1>
+					<p><?php echo $city2;?><br/> <?php echo $phone;?>: +38-(097)-486-53-45</p>
+					<h1><?php echo $conect;?></h1>
 					<div class="con-left">
 						<a href="skype:witalik_win;live:684c013e26be73c5;?chat">
 							<i class="fab fa-skype"></i>Skype
@@ -109,8 +124,8 @@
 						<ul class="save-right"><i class="fab fa-telegram-plane"></i>    Telegram
 							<li class="save-right">
 								<ul class="subsave">
-									<li><a href="tg://resolve?domain=Yaroslav Bulavin">Киев</a></li>
-									<li><a href="tg://resolve?domain=Віталік Булавін">Ровно</a></li>
+									<li><a href="tg://resolve?domain=Yaroslav Bulavin"><?php echo $city1;?></a></li>
+									<li><a href="tg://resolve?domain=Віталік Булавін"><?php echo $city2;?></a></li>
 								</ul>
 							</li>
 
@@ -119,8 +134,8 @@
 						<ul class="save-right"><i class="fab fa-viber"></i>         Viber		
 							<li class="hover-save">
 								<ul class="subsave">
-									<li><a href="viber://chat?number=+380978519794">Киев</a></li>
-									<li><a href="viber://chat?number=+380974865345">Ровно</a></li>
+									<li><a href="viber://chat?number=+380978519794"><?php echo $city1;?></a></li>
+									<li><a href="viber://chat?number=+380974865345"><?php echo $city2;?></a></li>
 								</ul>
 							</li>
 						</ul>

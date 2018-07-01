@@ -17,6 +17,25 @@ Class Controller_Index Extends Controller_Base
       $template->setFile('templates/main.phtml');
 
       $data = $_POST;
+      
+      if (isset($data['ru'])) {
+          $_SESSION['lang'] = $data['ru'];
+          $redirect = $data['redirect'];
+          header("Location: $redirect");
+      }
+      if (isset($data['en'])) {
+          $_SESSION['lang'] = $data['en'];
+          $redirect = $data['redirect'];
+          header("Location: $redirect");
+      }
+      if (isset($data['ua'])) {
+          $_SESSION['lang'] = $data['ua'];
+          $redirect = $data['redirect'];
+          header("Location: $redirect");
+      }
+
+
+
       if (isset($data['send'])) {
         $to = $data['email'];
         $subject = 'Здраствуйте '.$data['name'].'!';
@@ -24,7 +43,7 @@ Class Controller_Index Extends Controller_Base
         $headers = 'From:'.$to . "\r\n" .
         'Reply-To:'.$to  . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
-
+echo $data['name'];
          if (!empty($_POST['email']) AND !empty($_POST['name']) AND !empty($_POST['coment'])) {
         if ($mail = mail($to, $subject, $message, $headers)) {
             echo "повідомлення відправлено".$mail;
