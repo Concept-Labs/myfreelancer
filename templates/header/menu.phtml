@@ -19,15 +19,9 @@ if (isset($_SESSION['lang'])) {
     </span>
     <ul>
         <li><a href="#oncl"><i class="fas fa-home"></i></a></li>
-<<<<<<< HEAD
         <li><a href="#about"><?php echo $about; ?></a></li>
         <li><a href="#works"><?php echo $works; ?></a></li>
         <li><a href="#contact"><?php echo $contact; ?></a></li>
-=======
-        <li><a href="#about">О нас</a></li>
-        <li><a href="#works">Работы</a></li>
-        <li><a href="#contact">Контакты</a></li>
->>>>>>> a03b8289210068ec662ef289aa29b6ac232b30b0
     </ul>
     <div>
         <?php $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
@@ -44,13 +38,8 @@ if (isset($_SESSION['lang'])) {
 </div>
 
 <script type="text/javascript">
-<<<<<<< HEAD
-   $(document).ready(function(){
-    $("#menu").on("click","a", function (event) {
-=======
  $(document).ready(function(){
     $("#menu, #swipe-about, #swipe-works, #swipe-contact").on("click","a", function (event) {
->>>>>>> a03b8289210068ec662ef289aa29b6ac232b30b0
         event.preventDefault();
         var id  = $(this).attr('href'),
         top = $(id).offset().top;
