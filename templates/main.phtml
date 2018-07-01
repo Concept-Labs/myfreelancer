@@ -25,43 +25,50 @@ if (isset($_SESSION['lang'])) {
 
 					</div>	
 				</article>
+				<div class="swipe-down animated fadeInDown infinite" id="swipe-about">	
+					<a href="#about"><i class="fas fa-chevron-down"></i></a>
+				</div>
 			</div>
-		</section>
-	</div>
-	<div class="about" id="about">
-		<section id="ex2">
-			<div class="content">	
-
-				<div class="about-us">
-					<h1><img src="img/user.png" alt="<?php echo $about; ?>"></h1>
-					<h1><?php echo $about; ?></h1>
-					<article class="post">
-						<div class="circle-block">
-							<div class="circle"><i class="pa-g fas fa-thumbs-up"></i></div>
-
-							<p class="animated pulse infinite"><?php echo $qualitatively; ?></p>
-						</div>
-					</article>	
-					<div class="circle-block">
-						<div class="circle"><i class="pa-g far fa-clock"></i></div>
-
-						<p class="animated pulse infinite"><?php echo $fast; ?></p>
-					</div>	
-					<article class="post last">
-						<div class="circle-block">
-							<div class="circle"><i class="pa-g fas fa-money-bill-alt"></i></div>
-
-							<p class="animated pulse infinite"><?php echo $cheap; ?></p>
-						</div>
-					</article>
-					<div class="about-bottom">
-						<p ><?php echo $about_bottom; ?></p>
-					</div>
-				</article>
-			</div>
-
 		</div>
 	</section>
+</div>
+<div class="about" id="about">
+	<section id="ex2">
+		<div class="content">	
+
+			<div class="about-us">
+				<h1><img src="img/user.png" alt="<?php echo $about; ?>"></h1>
+				<h1><?php echo $about; ?></h1>
+				<article class="post">
+					<div class="circle-block">
+						<div class="circle"><i class="pa-g fas fa-thumbs-up"></i></div>
+
+						<p class="animated pulse infinite"><?php echo $qualitatively; ?></p>
+					</div>
+				</article>	
+				<div class="circle-block">
+					<div class="circle"><i class="pa-g far fa-clock"></i></div>
+
+					<p class="animated pulse infinite"><?php echo $fast; ?></p>
+				</div>	
+				<article class="post last">
+					<div class="circle-block">
+						<div class="circle"><i class="pa-g fas fa-money-bill-alt"></i></div>
+
+						<p class="animated pulse infinite"><?php echo $cheap; ?></p>
+					</div>
+				</article>
+				<div class="about-bottom">
+					<p ><?php echo $about_bottom; ?></p>
+					<div class="swipe-down" id="swipe-works">	
+						<a href="#works"><i class="fas fa-chevron-down"></i></a>
+					</div>
+				</div>
+			</article>
+		</div>
+
+	</div>
+</section>
 </div>
 <div class="works" id="works">
 	<div class="content">
@@ -131,76 +138,76 @@ if (isset($_SESSION['lang'])) {
 						<a href="#argument"><i class="fas fa-chevron-down"></i></a>
 					</div>
 				</ul>
-	</div>
-</div>
-</div>
-<div class="argument" id="argument">
-	<section id="ex3">
-		<div class="content">
-			<h1 class="post"><?php echo $argument;?></h1>
-			<br/><br/>
-			<div class="post last"><p ><?php echo $argument_description1;?></p> <br/><br/>
-				<p class="p2"><?php echo $argument_description2;?></p>
-				<br/><br/>
-				<p class="p3"><?php echo $argument_description3;?></p>
 			</div>
-			<br><br><br><br><br><br>
-			<div class="swipe-down" id="swipe-contact">	
-				<a href="#contact"><i class="fas fa-chevron-down"></i></a>
+		</div>
+	</div>
+	<div class="argument" id="argument">
+		<section id="ex3">
+			<div class="content">
+				<h1 class="post"><?php echo $argument;?></h1>
+				<br/><br/>
+				<div class="post last"><p ><?php echo $argument_description1;?></p> <br/><br/>
+					<p class="p2"><?php echo $argument_description2;?></p>
+					<br/><br/>
+					<p class="p3"><?php echo $argument_description3;?></p>
+				</div>
+				<br><br><br><br><br><br>
+				<div class="swipe-down" id="swipe-contact">	
+					<a href="#contact"><i class="fas fa-chevron-down"></i></a>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="contact" id="contact"> 
+		<div class="content">
+			<div class="contact-form">
+				<div class="contact-left">
+					<h1><?php echo $conctakt_form;?></h1>
+					<p><?php echo $conctakt_description;?></p>
+					<form action="/index" enctype="multipart/form-data" method="post">
+						<input type="text" name="name" placeholder="<?php echo $conctakt_name;?>">
+						<input type="email" name="email" placeholder="<?php echo $conctakt_email;?>"> <br/><br/>
+						<textarea name="coment" id="" cols="30" rows="10" placeholder="<?php echo $conctakt_comment;?>"></textarea>
+						<br/><br/>
+						<input type="submit" name="send" value="<?php echo $conctakt_send;?>">
+					</form>
+
+				</div>
+				<div class="contact-right">
+					<div class="con-right">
+						<h1><?php echo $our_address;?></h1>
+						<p><?php echo $city1;?><br/> <?php echo $phone;?>: +38-(097)-851-97-94</p>
+						<br/>
+						<p><?php echo $city2;?><br/> <?php echo $phone;?>: +38-(097)-486-53-45</p>
+						<h1><?php echo $conect;?></h1>
+						<div class="con-left">
+							<a href="skype:witalik_win;live:684c013e26be73c5;?chat">
+								<i class="fab fa-skype"></i>Skype
+							</a>
+							<br/><br/>
+
+							<ul class="save-right"><i class="fab fa-telegram-plane"></i>    Telegram
+								<li class="save-right">
+									<ul class="subsave">
+										<li><a href="tg://resolve?domain=Yaroslav Bulavin"><?php echo $city1;?></a></li>
+										<li><a href="tg://resolve?domain=Віталік Булавін"><?php echo $city2;?></a></li>
+									</ul>
+								</li>
+
+							</ul>
+							<br/>
+							<ul class="save-right"><i class="fab fa-viber"></i>         Viber		
+								<li class="hover-save">
+									<ul class="subsave">
+										<li><a href="viber://chat?number=+380978519794"><?php echo $city1;?></a></li>
+										<li><a href="viber://chat?number=+380974865345"><?php echo $city2;?></a></li>
+									</ul>
+								</li>
+							</ul>			
+						</div>
+					</div>
+				</div>	
 			</div>
 		</div>
 	</section>
-</div>
-<div class="contact" id="contact"> 
-	<div class="content">
-		<div class="contact-form">
-			<div class="contact-left">
-				<h1><?php echo $conctakt_form;?></h1>
-				<p><?php echo $conctakt_description;?></p>
-				<form action="/index" enctype="multipart/form-data" method="post">
-					<input type="text" name="name" placeholder="<?php echo $conctakt_name;?>">
-					<input type="email" name="email" placeholder="<?php echo $conctakt_email;?>"> <br/><br/>
-					<textarea name="coment" id="" cols="30" rows="10" placeholder="<?php echo $conctakt_comment;?>"></textarea>
-					<br/><br/>
-					<input type="submit" name="send" value="<?php echo $conctakt_send;?>">
-				</form>
-
-			</div>
-			<div class="contact-right">
-				<div class="con-right">
-					<h1><?php echo $our_address;?></h1>
-					<p><?php echo $city1;?><br/> <?php echo $phone;?>: +38-(097)-851-97-94</p>
-					<br/>
-					<p><?php echo $city2;?><br/> <?php echo $phone;?>: +38-(097)-486-53-45</p>
-					<h1><?php echo $conect;?></h1>
-					<div class="con-left">
-						<a href="skype:witalik_win;live:684c013e26be73c5;?chat">
-							<i class="fab fa-skype"></i>Skype
-						</a>
-						<br/><br/>
-
-						<ul class="save-right"><i class="fab fa-telegram-plane"></i>    Telegram
-							<li class="save-right">
-								<ul class="subsave">
-									<li><a href="tg://resolve?domain=Yaroslav Bulavin"><?php echo $city1;?></a></li>
-									<li><a href="tg://resolve?domain=Віталік Булавін"><?php echo $city2;?></a></li>
-								</ul>
-							</li>
-
-						</ul>
-						<br/>
-						<ul class="save-right"><i class="fab fa-viber"></i>         Viber		
-							<li class="hover-save">
-								<ul class="subsave">
-									<li><a href="viber://chat?number=+380978519794"><?php echo $city1;?></a></li>
-									<li><a href="viber://chat?number=+380974865345"><?php echo $city2;?></a></li>
-								</ul>
-							</li>
-						</ul>			
-					</div>
-				</div>
-			</div>	
-		</div>
-	</div>
-</section>
 </div>
