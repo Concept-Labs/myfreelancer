@@ -38,7 +38,7 @@ Abstract Class Controller_Base
             $headerMenu->setFile('templates/header/menu.phtml');    
             $_htmlHeaderMenu = $headerMenu->toHtmlWithPhp();
         	$headerTemplate->set('headerMenu', $_htmlHeaderMenu);
-        $_htmlheader = $headerTemplate->toHtml();
+        $_htmlheader = $headerTemplate->toHtmlWithPhp();
         $parentTemplate->set('header', $_htmlheader);
         
         if($usePhp){
@@ -46,7 +46,7 @@ Abstract Class Controller_Base
         } else {
             $html = $template->toHtml();
         }
-        $parentTemplate->set('content', $html);
+        $parentTemplate->set('content', $template->toHtmlWithPhp());
 		
         $footerTemplate = clone $parentTemplate;
         $footerTemplate->setFile('templates/footer.phtml');

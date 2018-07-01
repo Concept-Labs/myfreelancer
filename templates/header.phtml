@@ -1,8 +1,24 @@
+<?php
+if (isset($_SESSION['lang'])) {
+	if ($_SESSION['lang'] == 'ru') {
+		require_once('language/ru/templates/header.phtml');
+	}
+	if ($_SESSION['lang'] == 'en') {
+		require_once('language/en/templates/header.phtml');
+	}
+	if ($_SESSION['lang'] == 'ua') {
+		require_once('language/ua/templates/header.phtml');
+	}
+} else {
+	require_once('language/ru/templates/header.phtml');
+}
+?>
 <div class="header">
 	<div class="content">
 		<div class="logo animated bounceInLeft">	
-			<a href="/index"><img src="img/logo.png" alt=""></a>
+			<a href="/index"><img src="img/logo.png" alt="MYFREELANCER"></a>
 		</div>
 		{{$headerMenu}}
 	</div>
 </div>
+<div id="p_prldr"><div class="contpre"><span class="svg_anm"></span><img src="../img/preload.png" class="animated flip infinite "><br><br><?php echo $wait; ?><br><small><?php echo $wait2; ?></small></div></div>
