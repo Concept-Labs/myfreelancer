@@ -1,10 +1,10 @@
 .name{
 	background: url(../img/apple-computer-desk-159643.jpg) no-repeat#2e2e2e;
 	background-attachment: fixed;
-    background-size: cover;
-    background-position: 50% 50%;
-    /* padding: 80px 0; */
-    z-index: 0;
+	background-size: cover;
+	background-position: 50% 50%;
+	/* padding: 80px 0; */
+	z-index: 0;
 	margin-top: 50px;
 	text-align: center;
 	height: 100%;
@@ -15,15 +15,19 @@
 .name:hover {
 
 	transition: .4s all;
-    opacity: 1;
+	opacity: 1;
 
+}
+.name .swipe-down{
+	margin-top: 20%;
 }
 .none{
 	padding-top: 180px;
 }
 .name h1{
+
 	padding: 10px 0;
-    -webkit-user-select: none; /* Це для того, щоб користувачі не могли копіювати текст */
+	-webkit-user-select: none; /* Це для того, щоб користувачі не могли копіювати текст */
 }
 .name p{
 	font-size: 210%;
@@ -32,13 +36,13 @@
 }
 .name_con{
 	position: sticky;
-  top: 0;
+	top: 0;
 }
 p.slogan{
 	font-size: 100%;
 }
 .about{
-	padding-top: 40px;
+	padding-top: 50px;
 	background: #E6E6E6;
 	width: 100%;
 	height: auto;
@@ -48,12 +52,12 @@ p.slogan{
 	width: 900px;
 	margin: 0 auto;
 	height: auto;
-	padding: 50px 0 50px 0;
+	padding: 30px 0 15px 0;
 }
 .about h1{
 	text-align: center;
 	color: #2E2E2E;
-		padding: 0px;
+	padding: 0;
 }
 .about img{
 	width: 150px;
@@ -63,13 +67,27 @@ p.slogan{
 	padding: 30px 10% 0 10%;
 	color:  #2E2E2E;
 }
+.about .swipe-down{
+	margin: 20px;
+}
 
+.about .swipe-down i, .works .swipe-down i {
+	margin:0;
+	-webkit-transition: .2s ease-out;
+	-moz-transition: .2s ease-out;
+	-o-transition: .2s ease-out;
+		color: #2E2E2E;
+}
+.about .swipe-down i:hover, .works .swipe-down i:hover{
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-o-transform: scale(1.2);
+}
 .works{
 	color:#F2F2F2;
 	background: #A4A4A4;
 	width: 100%;
 	padding-top: 40px;
-	padding-bottom: 115px;
 }
 
 
@@ -79,14 +97,38 @@ p.slogan{
 .works article{
 	float: left;
 }
-.sayings{
+.works .swipe-down i{
+	color: #F2F2F2;
+}
+.works-con{
+	padding-bottom: 25px;
+}
+.argument{
 	width: 100%;
 	background: url(../img/myfreelancer.jpg) no-repeat;
 	background-attachment: fixed;
-    background-size: cover;
-    background-position: ;
-    padding: 150px 0;
-    z-index: 0;
+	background-size: cover;
+	background-position: ;
+	padding: 205px 0 55px 0;
+	z-index: 0;
+}
+.argument h1{
+	padding: 0;
+	text-align: left;
+	color:  #fff;
+}
+.argument p{
+	font-weight: bold;
+	padding: 0;
+	padding-left: 150px;
+	color: #fff;
+	font-size: 120%;
+}
+.argument .p2{
+	padding-left: 43%;
+}
+.argument .p3{
+	padding-left: 64%;
 }
 .contact-form{
 	padding: 50px 0 30px 0;
@@ -110,11 +152,13 @@ p.slogan{
 	padding: 0 0 10px 10px ;
 }
 .contact-left{
+	max-width: 57%;
 	float: left;
 	width: 57%;
 	padding: 10px 0 10px 10px;
 }
 .contact-right{
+	max-width: 30%;
 	float: right;
 	width: 30%;
 	padding: 10px 10px 10px 0;
