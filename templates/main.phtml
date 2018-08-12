@@ -169,9 +169,12 @@ if (isset($_SESSION['lang'])) {
 					<h1><?php echo $conctakt_form;?></h1>
 					<p><?php echo $conctakt_description;?></p>
 					<form action="/index" enctype="multipart/form-data" method="post">
-						<input type="text" name="name" placeholder="<?php echo $conctakt_name;?>">
-						<input type="email" name="email" placeholder="<?php echo $conctakt_email;?>"> <br/><br/>
-						<textarea name="coment" id="" cols="30" rows="10" placeholder="<?php echo $conctakt_comment;?>"></textarea>
+						<input type="text" name="name" placeholder="<?php echo $conctakt_name;?>" required>
+						<input type="email" name="email" placeholder="<?php echo $conctakt_email;?>" required> <br/><br/>
+						<textarea name="coment" id="" cols="30" rows="10" placeholder="<?php echo $conctakt_comment;?>" required></textarea>
+						<input type="hidden" name="date" value="<?php echo date('Y-m-d') ?>" />
+						<input type="hidden" name="time" value="<?php echo date('H:i:s') ?>" />
+						<input type="hidden" name="stan_massage" value="Непрочитано" />
 						<br/><br/>
 						<input type="submit" name="send" value="<?php echo $conctakt_send;?>">
 					</form>

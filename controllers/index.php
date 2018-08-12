@@ -16,6 +16,8 @@ Class Controller_Index Extends Controller_Base
 
       $template->setFile('templates/main.phtml');
 
+      $db = $this->_registry->get('db');
+
       $data = $_POST;
       
       if (isset($data['ru'])) {
@@ -35,25 +37,31 @@ Class Controller_Index Extends Controller_Base
       }
 
 
-
+      $errors = array();
       if (isset($data['send'])) {
-        $to = $data['email'];
-        $subject = 'Здраствуйте '.$data['name'].'!';
-        $message = $data['coment'];
-        $headers = 'From:'.$to . "\r\n" .
-        'Reply-To:'.$to  . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-echo $data['name'];
-         if (!empty($_POST['email']) AND !empty($_POST['name']) AND !empty($_POST['coment'])) {
-        if ($mail = mail($to, $subject, $message, $headers)) {
-            echo "повідомлення відправлено".$mail;
+        $name_client = trim($data['name']);
+        $email_client = $data['email'];
+        $coment_client = $data['coment'];
+        $date = $data['date'];
+        $time = $data['time'];
+        $stan_massage = $data['stan_massage'];
 
-        } else {
-            echo "повідомлення не відправлено";
+        if (empty($name_client)) {
+          $errors = 'Заповніть поле "'.$conctakt_name.'"!';
         }
-    }else {
-        echo "нема даних";
-    }
+        elseif (empty($email_client)) {
+          $errors = 'Заповніть поле "'.$conctakt_email.'"!';
+        }
+        elseif (empty($coment_client)) {
+          $errors = 'Заповніть поле "'.$conctakt_comment.'"!';
+        }
+
+        if (empty($errors)) {
+          $query = "INSERT INTO `message_client`(`id`, `name_client`, `email_client`, `coment_client`, `date`, `time`, `stan_massage`) VALUES (null,'$name_client','$email_client','$coment_client','$date','$time','$stan_massage')";
+          $result = mysqli_query($db, $query);
+
+        }
+
     }
 
     $this->_renderLayout($template);

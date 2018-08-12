@@ -1,0 +1,66 @@
+<?php 
+$result = $this->get('result');
+$num = $this->get('num');
+$errorsl = $this->get('errorsl');
+?>
+
+<div style="margin-top: 80px;">
+	
+	<?php if (!isset($_SESSION['login_admin'])) {            
+		?>
+		<div class="authorization-admin">
+			<?php if (!empty($errorsl)) { ?>
+			<div>
+				<span style="color:red	;"><?php echo $errorsl; ?></span>
+			</div> 
+			<?php } ?>
+			<p>Вхід на сторінку доставки</p>
+			<br/>
+			<form action="<?php echo base_url .'admin'; ?>" method="post">
+				<input class="admin-int" type="text" name="login" placeholder=" ваш логін" value="<?php echo @$_POST['login']; ?>" /><br/><br/>
+				<input class="admin-int" type="password" name="password" placeholder=" ваш пароль"/><br/><br/>
+				<input type="submit" name="log" value="Увійти" />
+			</form>
+		</div>
+		<?php }
+		else { ?>
+
+	<?php if (!isset($_GET['message'])) {?>
+	<div>
+		<table>
+		<h2>Повідомлення</h2>
+		<?php while ($row = mysqli_fetch_array($result)) {?>
+		<tr class="<?php if ($row['stan_massage'] == 'Непрочитано') { echo 'unread';} else { echo 'read';}?>" onclick="window.location.href='<?php echo base_url .'/admin?message&id='.$row['id']; ?>'; return false">
+			<td><?php echo $row['name_client']; ?></td>
+			<td><?php echo $row['email_client']; ?></td>
+			<td><?php $coment_client = $row['coment_client'];
+			$counttext = 50;
+			$coment_client = substr($coment_client, 0, $counttext);
+			$coment_client = rtrim($coment_client);
+			$coment_client = substr($coment_client, 0, strrpos($coment_client, ' '));
+			if (mb_strlen($row['coment_client']) > $counttext) {
+				echo $coment_client; 
+			} else {
+				echo $row['coment_client'];
+			}   ?>
+		</td>
+		<td><?php echo $row['date']; ?></td>
+	</tr>
+	<?php } ?>
+</table>
+	</div>
+	<?php }
+	else
+	{
+		if (isset($_GET['message'])) {
+			$roww = $this->get('roww');?>
+			<div>
+				<h2><?php echo $roww['name_client']; ?></h2><br><hr>
+				<h4><?php echo $roww['email_client']; ?></h4>
+				<h4><?php echo $roww['date'].' в '.$roww['time']; ?></h4><br><br>
+				<p><?php echo $roww['coment_client']; ?></p>
+			</div>
+		<?php }
+	} 
+}?>
+</div>
