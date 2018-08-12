@@ -76,3 +76,47 @@
     margin-top: 23px;
     width: 100%;
 }
+
+.langbar{
+
+	cursor: pointer;
+	margin: 25px 0 0 30px;
+	float: left;
+	color: #E6E6E6;
+	font: normal 90% 'century gothic', arial;
+}
+.langbar li button{
+	color: #E6E6E6;
+	font: normal 90% 'century gothic', arial;
+	background: none;
+	border: none;
+
+	cursor: pointer;
+	list-style-type: none;
+		transition: .2s all;
+}
+.langbar li{
+
+	padding: 10px 10px;
+	list-style-type: none;
+}
+.langbar li button:hover{
+	color: #0080FF;
+}
+ul.sub-lang{
+		margin-left: 20px;
+		border-radius: 5px;
+	background: #2E2E2E;
+	 position: absolute;  
+	 max-height:0px;
+    overflow:hidden;
+    -webkit-transition:max-height 0.5s linear;
+    -moz-transition:max-height 0.5s linear;
+    transition:max-height 0.5s linear;
+}
+
+ul.lang:hover ul.sub-lang{
+	max-height:300px;
+
+
+}

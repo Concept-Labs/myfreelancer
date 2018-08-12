@@ -17,23 +17,13 @@ if (isset($_SESSION['lang'])) {
     <span class="tel" data-title="+38-(097)-851-97-94 +38-(097)-486-53-45">
         <a href="#"><i class="phone fas fa-phone"></i></a>
     </span>
+   
     <ul>
         <li><a href="#oncl"><i class="fas fa-home"></i></a></li>
         <li><a href="#about"><?php echo $about; ?></a></li>
         <li><a href="#works"><?php echo $works; ?></a></li>
         <li><a href="#contact"><?php echo $contact; ?></a></li>
     </ul>
-    <div>
-        <?php $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
-        <form action="/index" method="post" enctype="multipart/form-data">
-         <button><?php echo $language; ?></button>
-         <ul>
-            <li><button type="submit" name="ru" value="ru">Русский</button></li>
-            <li><button type="submit" name="en" value="en">English</button></li>
-            <li><button type="submit" name="ua" value="ua">Українська</button></li>
-        </ul>
-        <input type="hidden" name="redirect" value="<?php echo $redirect;?>">
-    </div> 
 </form>
 </div>
 
