@@ -19,8 +19,8 @@
 	-moz-transition: all .5s ease-out;
  -o-transition: all .5s ease-out;
  -webkit-transition: all .5s ease-out;
-	height: 50px;
-	width: 300px;
+	height: auto;
+	width: 100%;
 }
 .logo img:hover{
 	-webkit-transform: scale(1.05);
