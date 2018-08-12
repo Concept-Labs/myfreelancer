@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 12 2018 г., 11:23
+-- Время создания: Авг 12 2018 г., 11:26
 -- Версия сервера: 10.1.30-MariaDB
 -- Версия PHP: 7.2.2
 
@@ -36,7 +36,13 @@ CREATE TABLE `users_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Дамп данных таблицы `users_admin`
+--
 
+INSERT INTO `users_admin` (`id`, `login`, `password`, `date`) VALUES
+(1, 'admin', 'f3f1c26545d2424e5bbc7bf12a8f2dc6', '2018-08-12');
+
+--
 -- Индексы сохранённых таблиц
 --
 
@@ -54,7 +60,7 @@ ALTER TABLE `users_admin`
 -- AUTO_INCREMENT для таблицы `users_admin`
 --
 ALTER TABLE `users_admin`
-  MODIFY `id` int(55) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id` int(55) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
