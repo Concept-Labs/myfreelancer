@@ -1,0 +1,90 @@
+<?php 
+$query = $this->get('query');
+$num = $this->get('num');
+$row_users = $this->get('row_users');
+
+$roww = $this->get('roww');
+
+if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['edit_delivery']) && !isset($_GET['delete_delivery']) && !isset($_GET['edit_admin']) && !isset($_GET['delete_admin']) && !isset($_GET['edit_directrix']) && !isset($_GET['delete_directrix'])) { ?>
+<div class="settings" style="margin-top: 80px;">   
+    <div>
+        <h2>Паролі до паролі до панелі управління</h2>
+        <br/>
+        <table>
+            <tr class="table-top">
+                <td>№</td>
+                <td class="width-name">Логін</td>
+                <td>Дата</td>
+                <td>Дія</td>
+            </tr>
+            <?php if ($num) {
+                while ($row_users = mysqli_fetch_array($query, MYSQLI_BOTH)) {
+                    $date_format = date_format(date_create($row_users['date']), 'd.m.Y'); ?>
+                    <tr>                
+                        <td><?php echo $row_users['id']; ?></td>
+                        <td class="width-name"><a href="<?php echo base_url .'admin/users?edit_site&id='.$row_users['id']; ?>"><?php echo $row_users['login'];?></a></td>
+                        <td><?php echo $date_format; ?></td>
+                        <td> <a href="<?php echo base_url .'admin/users?edit_site&id='.$row_users['id']; ?>" class="edit" title="Змінити пароль"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'admin/users?delete_site&id='.$row_users['id']; ?>" class="delete" title="Видалити пароль"><i class="fas fa-trash-alt"></i></a></td>
+                        <?php } } ?>
+                    </tr>
+                </table>
+                <a href="<?php echo base_url .'admin/add_users'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></i></a>
+            </div>
+
+                        <?php
+                    } else { 
+
+                        if (isset($_GET['edit_site'])) {
+                            $errore = $this->get('errore');
+                            ?>
+                            <div>
+                                <?php 
+                                if (!empty($errore)) echo "<div style='color: red;  float: right;'>" .$errore ."</div>"; ?>
+                                </div>
+                                <div>
+                                    <h3>Змінити пароль</h3>
+                                    <form action="<?php echo base_url .'settings?edit_site&id='.$roww['id']; ?>" method="post">
+                                        <table class="add-table">
+                                            <tr class="table-top">
+                                                <td>№</td>
+                                                <td class="width-name">Логін</td>
+                                                <td>Новий пароль</td>
+                                                <td>Пітвердження пароля</td>
+                                            </tr>
+                                            <tr>
+                                                <td> <?php echo $roww['id']; ?></td>
+                                                <td><?php echo $roww['login']; ?></td>
+                                                <td> <input type="password" name="password"> </td>
+                                                <td> <input type="password" name="password-confirm"> </td>             
+                                            </tr>
+                                            <input class="sub-save" type="submit" name="save" value=" Зберегти">
+                                        </table>
+                                        <br/><br/><br/><br/><br/>
+
+                                    </form>
+                                    <?php
+                                }
+
+                                if (isset($_GET['delete_site'])) {
+                                    $delete = $this->get('delete');
+                                            if (!isset($delete)) {
+                                                 ?>
+                                            <div class="delete-block-top zatmenie">
+                                                <div class="delete-block">
+                                                    <form action="<?php echo base_url .'admin/users?delete_site&id='.$roww['id']; ?>" method="post">
+                                                        Ви дійсно хочете <span style="color: red;">видалити</span> даного користувача!!!<br/><br/>
+                                                        <button type="submit" class="confirmation-btn" name="delete_user" value="1">Так</button>
+                                                        <button type="submit" class="confirmation-btn" name="delete_user" value="0">Ні</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <?php  } else {
+                                                echo "<div style='color: green;'>Користувача успішно видалено!</div>";
+                                            }
+
+                                        }
+
+                                    }
+                                    ?>
+                                </div> 
