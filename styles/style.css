@@ -403,3 +403,130 @@ ul.save-right:hover ul.subsave{
 	color: #fff;
 	font-size: 230%;
 }
+
+/* адмін сторінка */
+.unread{
+	background-color: #f4f3f3;
+}
+.read{
+	background-color: #fff;
+}
+.position-table{
+	margin-top: 100px;
+}
+.admin-page table{
+	width: 100%;
+	border: 1px solid silver;
+	border-collapse: collapse;
+}
+.admin-page table tr{
+	cursor: pointer;
+}
+.admin-page table td{
+	border: 1px solid silver;
+	padding: 5px 10px;
+}
+tr:hover, .table-top:not(:hover){
+	background-color: #e2e2e2;
+}
+.message-block{
+	border: 1px solid silver;
+	padding: 2%;
+}
+.left-position{
+	float: left;
+}
+.right-position{
+	float: right;
+}
+/* кінець адмін */
+/* Блок авторизації */
+div.authorization-block{
+	background: #1C1C1C;
+	padding: 2%;
+	width: 30%;
+	margin: 130px auto;
+	text-align: center;
+	border-radius: 5px;
+	-webkit-box-shadow: 1px 1px 30px 0px rgba(48, 50, 50, 1);
+	-moz-box-shadow:    1px 1px 30px 0px rgba(48, 50, 50, 1);
+	box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
+}
+div.authorization-block img{
+	max-width: 20%;
+	margin-bottom: 30px;
+}
+
+div.authorization-block input{
+	color: #fff;
+	width: 60%;
+	max-width: 100%;
+	padding: 1.5%;
+	border: 0px;
+	border-radius: 5px;
+	background: #000;
+	opacity: .5;
+	-webkit-transition: all .4s;
+	-moz-transition: all .4s;
+	transition: all .4s;
+}
+div.authorization-block input[type="submit"]{
+	padding: 1.5%;
+	background: #FA5858;
+	color: #fff;
+	width: 30%;
+	cursor: pointer;
+	opacity: .8;
+}
+div.authorization-block input[type="submit"]:hover{
+	background: #f43434;
+}
+
+div.authorization-block input:focus{
+	opacity: 1;
+	outline: none;
+}
+
+.authorization-error{
+	background-color: red;
+	text-align: center;
+	margin: 0 auto;
+	color: #fff;
+	width: 140px;
+	padding: 10px 5px;
+	border-radius: 0 0 5px 5px;
+	font: normal 90% 'century gothic', arial;
+}
+/* кінець авторизації */
+/* мобільна версія авторизації */
+@media screen and (max-device-width: 1024px){
+	div.authorization-block p{
+		font-size: 270%;
+	}
+	div.authorization-block{
+		width:  800px;
+		padding: 150px 0;
+		border-radius: 20px;
+	}
+	div.authorization-block img{
+		width: 90%;
+		margin: 20px auto;
+	}
+	div.authorization-block input[type="text"], input[type="password"] {
+		width: 80%;
+		padding: 20px;
+		font-size: 40px;
+		border-radius: 10px;
+	}
+	div.authorization-block input[type="submit"]{
+		width: 30%;
+		font-size: 50px;
+		padding: 10px;
+		border-radius: 10px;
+	}
+	.authorization-error{
+	width: 440px;
+	font: normal 250% 'century gothic', arial;
+	}
+}
+/* кінець мобільної версії авторизації */

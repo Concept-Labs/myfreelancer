@@ -14,9 +14,13 @@
     <script type="text/javascript" src="../script/jQuery.js"></script>
 </head>
 <body class="mCustomScrollbar">
+    <div class="bg">
     {{$header}}
-    {{$content}}
+        <div class="content-bg">{{$content}}</div>
+    </div>
     {{$footer}}
+    
+
     <script type="text/javascript" src="../script/scrollwebsite.js"></script>
     <script type="text/javascript" src="../script/script-scroll-block.js"></script>
     <script type="text/javascript">$(window).on('load', function () {

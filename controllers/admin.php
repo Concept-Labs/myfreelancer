@@ -178,4 +178,14 @@ Class Controller_Admin Extends Controller_Base
 
     $this->_renderLayout($template);
   }
+
+   public function logout() 
+  {
+
+    $template = $this->_initTemplate('Вихід');
+
+    $template->setFile('templates/admin/logout.phtml');
+
+    $this->_renderLayout($template);
+  }
 }
